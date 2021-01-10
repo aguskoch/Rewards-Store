@@ -1,7 +1,7 @@
 import {headers} from "./constants"
+import {URL_GETPRODUCTS} from "./constants"
 
 async function getProducts() {
-    const URL_GETPRODUCTS = "https://coding-challenge-api.aerolab.co/products"
 
     try {
         const response = await fetch(URL_GETPRODUCTS, { method: "GET", headers })

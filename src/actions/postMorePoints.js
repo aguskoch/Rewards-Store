@@ -1,7 +1,8 @@
 import {headers} from "./constants"
+import {URL_POSTCOINS} from "./constants"
 
 async function postMoreCoins(amount) {
-    const URL_POSTCOINS = "https://coding-challenge-api.aerolab.co/user/points"
+    
 
     try {
         console.log(amount)
