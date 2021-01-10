@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Rewards-Store/static/css/main.cbe9ab05.chunk.css",
+    "main.js": "/Rewards-Store/static/js/main.e4927d30.chunk.js",
+    "main.js.map": "/Rewards-Store/static/js/main.e4927d30.chunk.js.map",
+    "runtime-main.js": "/Rewards-Store/static/js/runtime-main.939a3dab.js",
+    "runtime-main.js.map": "/Rewards-Store/static/js/runtime-main.939a3dab.js.map",
+    "static/css/2.1f208231.chunk.css": "/Rewards-Store/static/css/2.1f208231.chunk.css",
+    "static/js/2.4edaa002.chunk.js": "/Rewards-Store/static/js/2.4edaa002.chunk.js",
+    "static/js/2.4edaa002.chunk.js.map": "/Rewards-Store/static/js/2.4edaa002.chunk.js.map",
+    "static/js/3.5b1ecaef.chunk.js": "/Rewards-Store/static/js/3.5b1ecaef.chunk.js",
+    "static/js/3.5b1ecaef.chunk.js.map": "/Rewards-Store/static/js/3.5b1ecaef.chunk.js.map",
+    "index.html": "/Rewards-Store/index.html",
+    "static/css/2.1f208231.chunk.css.map": "/Rewards-Store/static/css/2.1f208231.chunk.css.map",
+    "static/css/main.cbe9ab05.chunk.css.map": "/Rewards-Store/static/css/main.cbe9ab05.chunk.css.map",
+    "static/js/2.4edaa002.chunk.js.LICENSE.txt": "/Rewards-Store/static/js/2.4edaa002.chunk.js.LICENSE.txt",
+    "static/media/buy-blue.c5c4f01c.svg": "/Rewards-Store/static/media/buy-blue.c5c4f01c.svg",
+    "static/media/coin.b8bc711d.svg": "/Rewards-Store/static/media/coin.b8bc711d.svg",
+    "static/media/styles.css": "/Rewards-Store/static/media/header-x1.b6f067c6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.939a3dab.js",
+    "static/css/2.1f208231.chunk.css",
+    "static/js/2.4edaa002.chunk.js",
+    "static/css/main.cbe9ab05.chunk.css",
+    "static/js/main.e4927d30.chunk.js"
+  ]
+}
