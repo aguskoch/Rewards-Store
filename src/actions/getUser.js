@@ -1,4 +1,4 @@
-import {headers} from "./constantHeaders"
+import {headers} from "./constants"
 
 async function getUser() {
     const URL_GETUSER = "https://coding-challenge-api.aerolab.co/user/me"

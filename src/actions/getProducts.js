@@ -1,4 +1,4 @@
-import {headers} from "./constantHeaders"
+import {headers} from "./constants"
 
 async function getProducts() {
     const URL_GETPRODUCTS = "https://coding-challenge-api.aerolab.co/products"
