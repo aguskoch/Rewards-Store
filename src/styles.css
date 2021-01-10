@@ -1,13 +1,17 @@
-.container {
+
+/* Cards Styling */
+
+.container-cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+
 .card {
     padding: 1em;
-    margin: 0.4em;
+    margin: 2em;
     border-radius: 10px;
     box-shadow: 3px 3px 5px -2px #c8c8c8;
 }
@@ -15,15 +19,14 @@
 .card:hover{
     box-shadow: 10px 3px 5px 0px #919191ed;
     /* background-color:#25bbf1; */
-    background: linear-gradient(0deg, rgb(1, 187, 187) 0%, rgba(254,254,254,0.35057773109243695) 29%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(0deg, #0ad4fa 0%, rgba(254,254,254,0.35057773109243695) 29%, rgba(255,255,255,1) 100%);
     z-index: 1000;
-    border: rgb(1,187,187);
+    border: #0ad4fa;
     opacity: 1;
 }
 
 .card-hovered{
     position: absolute;
-
 }
 
 .img-hovered{
@@ -31,26 +34,60 @@
 }
 
 .card-cost{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    
-
+    margin-left: 0.3em;
+    margin-top: 0.1em;
 }
+
 .buttons-card-hovered{
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
 }
+
+.buy{
+    margin-top: 0.2em;
+    width: 1.5em;
+    height: 1.5em;
+}
+
 
 .btn-dark{
     border-radius: 25px;
     font-size: larger;
-    background: rgb(1,187,187);
-    border: 1px solid rgb(1,187,187)
+    background: #0ad4fa;
+    border: 1px solid #0ad4fa
 }
 
 .card-img-top:hover{
     background-color: #0ad4fa;
+}
+
+.coin{
+    margin-left: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+
+/* Header Styling */
+
+.imageHeader{
+    width: 10em;
+    height: 10em;
+}
+
+.container-header{
+    padding: 2rem;
+    display: flex;
+    margin-top: 12vh;
+    width: 100%;
+    height: 30vw;
+    background-image: url(./assets/header-x1.png);
+    background-size: cover;
+}
+
+.title-header{
+    color: #fff;
+    align-self: center;
+    font-size: 5em;
+    font-weight: bold;
 }
