@@ -1,24 +1,34 @@
 import React from "react"
 import getUser from "../actions/getUser"
 import AddCoins from "../components/addCoins"
+import coin from "../assets/coin.svg"
 
 
 function Header() {
 
-    //usar un context que tome el usuario entonces cada vez que cambie el estado va a renderear
     const [modal, setModal ] = React.useState (false)
     
     const [users, setUsers] = React.useState([])
+
     React.useEffect(() => {
+       
         getUser().then(e => setUsers(e));
     },[users]);
 
     return (
         <section className="header">
-            <h6> {users.name} </h6>
-            <button onClick = {() => setModal(true)} > {users.points} </button>
+            {/* {userLoaded ?
+            <h4> Loading... </h4> : */}
+            <div className="userNameInfo">
+                <h6 className="userName"> {users.name} </h6>
+                <button className="button-headerCoins" onClick = {() => setModal(true)} > 
+                    {users.points}
+                    <img src={coin} alt="coin"/>
+                </button>
+            </div>
+            
             {modal ? 
-            <AddCoins/> : null}
+            <AddCoins setModal={setModal}/> : null}
             <div className="container-header">
                 <h6 className="title-header"> Electronics </h6>
             </div>

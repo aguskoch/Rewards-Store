@@ -7,6 +7,7 @@ import postRedeem from "../actions/postRedeem.js"
 function Cards(props) {
     
     const [hovered, isHovered] = useState(false)
+    const [successRedeem, setSuccessRedeem] = useState(false)
 
     return (
         <div 
@@ -15,7 +16,7 @@ function Cards(props) {
             onMouseOver={() => isHovered(true)}
             onMouseLeave={() => isHovered(false)}>
             <img src={props.img.url} className={hovered ? "img-hovered card-img-top" : "card-img-top"} alt={props.name}/>
-            <button type="button" className="btn btn-dark"  onClick={() => postRedeem(props._id)}>Redeem now</button>
+            <button type="button" className="btn btn-dark" onClick={() => postRedeem(props._id)}>Redeem now</button>
             <div className="card-body">
                 <h6 className="card-subtitle mb-2 text-muted">{props.category}</h6>
                 <h6 className="card-title">{props.name}</h6>
@@ -27,9 +28,11 @@ function Cards(props) {
                     <h5 className="card-cost"> {props.cost} </h5> 
                     <img className="coin" src={coin} alt="coin"/>  
                 </div>
-               
                 
             </div>: null}
+            {successRedeem ?
+            <div> Success </div> 
+            : null}
 
         </div> 
     )
