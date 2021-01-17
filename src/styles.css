@@ -192,3 +192,11 @@
     padding-left: 1em;
 
 }
+
+.successEnabled{
+    display: contents;
+}
+
+.successDisabled{
+    display: none;
+}
