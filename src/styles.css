@@ -67,6 +67,66 @@
     margin-bottom: 0.2em;
 }
 
+.successRedeem{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+#closeSuccessRedeeem{
+    grid-area: closeSuccessRedeeem;
+    color: #fff;
+}
+
+@keyframes rotateIn {
+    0% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+    }
+}
+
+.smileyFace{
+    justify-self: center;
+    width: 9em;
+    height: 9em;
+    animation: rotateIn 2s ease alternate infinite;
+}
+
+.product-modal-div{
+    grid-area: product-modal-div;
+    display:grid
+}
+
+.product-modal {
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-image: linear-gradient(315deg,#03e9b7,#63e72f);
+    display: grid;
+    grid-template-columns: 10% 70% 10%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: 
+    "... ... closeSuccessRedeeem"
+    "... product-modal-div ... ";
+    justify-content: center;
+}
+
+
 
 /* Header Styling */
 
@@ -178,7 +238,7 @@
     grid-area: buttonAddCoins3;
 }
 
-.closeAddCoins{
+.close{
     grid-area:closeAddCoins;
     width: 2em;
     height: 2em;

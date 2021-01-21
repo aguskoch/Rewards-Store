@@ -9,7 +9,7 @@ function AddCoins(props) {
     const [ messageSuccessCoins, setMessageSuccessCoins] = React.useState("")
 
     const handleClickCoins = (number) =>{
-        postMoreCoins(THOUSAND).then(response => setMessageSuccessCoins(response.message))
+        postMoreCoins(number).then(response => setMessageSuccessCoins(response.message))
     }
 
 
@@ -33,7 +33,7 @@ function AddCoins(props) {
                     <img src={coin} alt={SEVENTHOUSAND} />
                     {SEVENTHOUSAND}
                 </button>
-                <button className="closeAddCoins" onClick={() => props.setModal(false)}> X </button>
+                <button className="close" onClick={() => props.setModal(false)}> X </button>
             </section>
         </div>
         

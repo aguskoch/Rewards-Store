@@ -2,12 +2,18 @@ import React, {useState} from "react"
 import coin from "../assets/coin.svg"
 import buy from "../assets/buy-blue.svg"
 import postRedeem from "../actions/postRedeem.js"
+import emojiSmile from "../assets/emoji-smile.svg"
 
 
 function Cards(props) {
     
     const [hovered, isHovered] = useState(false)
-    const [successRedeem, setSuccessRedeem] = useState(false)
+    const [successRedeem, setSuccessRedeem] = useState("")
+
+    const handleRedeem = (id) =>{
+        postRedeem(id).then(response => setSuccessRedeem(response.message))
+    }
+    
 
     return (
         <div 
@@ -16,7 +22,7 @@ function Cards(props) {
             onMouseOver={() => isHovered(true)}
             onMouseLeave={() => isHovered(false)}>
             <img src={props.img.url} className={hovered ? "img-hovered card-img-top" : "card-img-top"} alt={props.name}/>
-            <button type="button" className="btn btn-dark" onClick={() => postRedeem(props._id)}>Redeem now</button>
+            <button type="button" className="btn btn-dark" onClick={() => handleRedeem(props._id)}>Redeem now</button>
             <div className="card-body">
                 <h6 className="card-subtitle mb-2 text-muted">{props.category}</h6>
                 <h6 className="card-title">{props.name}</h6>
@@ -31,7 +37,13 @@ function Cards(props) {
                 
             </div>: null}
             {successRedeem ?
-            <div> Success </div> 
+            <div className="product-modal"> 
+                <button className="close" id="closeSuccessRedeeem" onClick={() => setSuccessRedeem("")}> X </button>
+                <div className="product-modal-div">
+                    <img className="smileyFace" src={emojiSmile} alt="success" />
+                    <h4 className="successRedeem"> {successRedeem} </h4>
+                </div>
+            </div> 
             : null}
 
         </div> 

@@ -6,7 +6,6 @@ import "./styles.css"
 
 function App() {
 
-  
   const [products, setProducts] = useState([])
 
   useEffect(() => {
