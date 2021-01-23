@@ -202,7 +202,7 @@
     z-index: 1000;
     display: grid;
     grid-template-columns: auto auto auto 5%;
-    grid-template-rows: 10% 20% auto;
+    grid-template-rows: 10% 25% auto;
     grid-template-areas: 
     "... ... ... closeAddCoins"
     "title-addCoins ... ... ..."
@@ -250,6 +250,7 @@
 .title-addCoins{
     grid-area: title-addCoins;
     padding-left: 1em;
+    align-self: center;
 
 }
 
@@ -259,4 +260,33 @@
 
 .successDisabled{
     display: none;
+}
+
+.close-PointsSuccess{
+    width: 2em;
+    height: 2em;
+    padding-bottom: 0.7em;
+    border: none;
+    background: none;
+    color: #fff;
+}
+
+.successAddPoints{
+    padding-top: 0.2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #0ad4fa;
+    border-radius: 8px;
+}
+
+.successAddPoints:hover{
+    -webkit-box-shadow: 4px 5px 13px 3px rgba(0,0,0,0.5); 
+    box-shadow: 4px 5px 13px 3px rgba(0,0,0,0.5);
+}
+
+
+.success-pointsSuccess{
+    color: #fff;
+    padding-left: 0.2em;
 }

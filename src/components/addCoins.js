@@ -16,9 +16,11 @@ function AddCoins(props) {
     return (
         <div className="modal-screen">
             <section className="addCoins">
-                <div className={messageSuccessCoins === "Points Updated" ? "successEnabled" : "successDisabled"}> 
-                    <h1> Success </h1>
-                    <button onClick={() => setMessageSuccessCoins("")}> X </button>
+                <div>
+                    <div className={messageSuccessCoins === "Points Updated" ? "successEnabled successAddPoints" : "successDisabled"}> 
+                        <h6 className="success-pointsSuccess"> Success </h6>
+                        <button className="close-PointsSuccess" onClick={() => setMessageSuccessCoins("")}> X </button>
+                    </div>
                 </div>
                 <h4 className="title-addCoins"> Add more coins </h4>
                 <button className="button-addCoins one" onClick={() => handleClickCoins(THOUSAND)}>
