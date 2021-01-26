@@ -2,44 +2,48 @@ import React from "react"
 import coin from "../assets/coin.svg"
 import postMoreCoins from "../actions/postMorePoints"
 import { THOUSAND, FIVETHOUSAND, SEVENTHOUSAND } from "../actions/constants"
+import { userContext } from '../context/userContext';
 
 
 function AddCoins(props) {
+    const [show, setShow] = React.useState(false);
+    const { points, setPoints } = React.useContext(userContext);
 
-    const [ messageSuccessCoins, setMessageSuccessCoins] = React.useState("")
+    React.useEffect(() => {
+        if(show) 
+            setTimeout(() => { setShow(false) }, 2000)
+    },[show])
 
-    const handleClickCoins = (number) =>{
-        postMoreCoins(number).then(response => setMessageSuccessCoins(response.message))
+    const handleClick = (number) =>{
+        postMoreCoins(number).then(response => { setPoints(points + number); setShow(true) })
     }
-
-
+    
     return (
         <div className="modal-screen">
             <section className="addCoins">
                 <div>
-                    <div className={messageSuccessCoins === "Points Updated" ? "successEnabled successAddPoints" : "successDisabled"}> 
+                    {show && 
+                    <div className={ "successEnabled successAddPoints" }> 
                         <h6 className="success-pointsSuccess"> Success </h6>
-                        <button className="close-PointsSuccess" onClick={() => setMessageSuccessCoins("")}> X </button>
                     </div>
+                    }
                 </div>
                 <h4 className="title-addCoins"> Add more coins </h4>
-                <button className="button-addCoins one" onClick={() => handleClickCoins(THOUSAND)}>
+                <button className="button-addCoins one" onClick={() => handleClick(THOUSAND)}>
                     <img src={coin} alt={THOUSAND} />
                     {THOUSAND}
                 </button>
-                <button className="button-addCoins two" onClick={() => handleClickCoins(FIVETHOUSAND)}>
+                <button className="button-addCoins two" onClick={() => handleClick(FIVETHOUSAND)}>
                     <img src={coin} alt={FIVETHOUSAND} />
                     {FIVETHOUSAND}
                 </button>
-                <button className="button-addCoins three" onClick={() => handleClickCoins(SEVENTHOUSAND)}>
+                <button className="button-addCoins three" onClick={() => handleClick(SEVENTHOUSAND)}>
                     <img src={coin} alt={SEVENTHOUSAND} />
                     {SEVENTHOUSAND}
                 </button>
                 <button className="close" onClick={() => props.setModal(false)}> X </button>
             </section>
         </div>
-        
-
     )
 }
 

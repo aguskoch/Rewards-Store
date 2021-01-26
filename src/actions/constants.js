@@ -11,3 +11,5 @@ export const URL_GETPRODUCTS = "https://coding-challenge-api.aerolab.co/products
 export const URL_GETUSER = "https://coding-challenge-api.aerolab.co/user/me"
 export const URL_POSTCOINS = "https://coding-challenge-api.aerolab.co/user/points"
 export const URL_POSTREDEEM = "https://coding-challenge-api.aerolab.co/redeem"
+
+export const LIMIT = 16

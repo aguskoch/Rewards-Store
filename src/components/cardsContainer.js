@@ -30,8 +30,8 @@ const CardsContainer = () => {
     return (
         <div>
             <button onClick={() => setSortData("recent")}> Most Recent </button>
-            <button onClick={() => setSortData("lowPrice")}> Lowest to Highest Price </button>
-            <button onClick={() => setSortData("highPrice")}> Highest to Lowest Price </button>
+            <button onClick={() => setSortData("lowPrice")}> Price: Low to High </button>
+            <button onClick={() => setSortData("highPrice")}> Price: High to Low </button>
             {/* <div className="container-cards">
                 {products.map((data, id) => {
                     return <Cards key={id} {...data} />

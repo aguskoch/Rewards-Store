@@ -1,19 +1,13 @@
 import React from "react"
-import getUser from "../actions/getUser"
 import AddCoins from "../components/addCoins"
+import { userContext } from '../context/userContext';
 import coin from "../assets/coin.svg"
 
 
 function Header() {
 
-    const [modal, setModal ] = React.useState (false)
-    
-    const [users, setUsers] = React.useState([])
-
-    React.useEffect(() => {
-       
-        getUser().then(e => setUsers(e));
-    },[users]);
+    const [modal, setModal] = React.useState(false)
+    const { users, points } = React.useContext(userContext)
 
     return (
         <section className="header">
@@ -22,7 +16,7 @@ function Header() {
             <div className="userNameInfo">
                 <h6 className="userName"> {users.name} </h6>
                 <button className="button-headerCoins" onClick = {() => setModal(true)} > 
-                    {users.points}
+                    {points}
                     <img src={coin} alt="coin"/>
                 </button>
             </div>
