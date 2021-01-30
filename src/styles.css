@@ -95,7 +95,7 @@
     }
 }
 
-.smileyFace{
+.emojis-modal{
     justify-self: center;
     width: 9em;
     height: 9em;
@@ -107,7 +107,7 @@
     display:grid
 }
 
-.product-modal {
+.product-modal, .product-modal-failed {
     position: absolute;
     border-radius: 10px;
     top: 0;
@@ -126,6 +126,9 @@
     justify-content: center;
 }
 
+#modal-failed{
+    background-image: linear-gradient(0deg, rgba(252,101,0,1) 0%, rgba(245,75,4,1) 51%, rgba(246,7,7,1) 100%);
+}
 
 
 /* Header Styling */
@@ -170,6 +173,10 @@
     align-items: center;
 }
 
+.button-headerCoins:focus{
+    outline: none;
+}
+
 .userName{
     line-height: 34px;
     margin: .5rem;
@@ -210,6 +217,12 @@
     
 }
 
+.successAddPointsDiv{
+    width: 50%;
+    margin-left: 25%;
+}
+
+
 .button-addCoins{
     justify-self: center;
     width: 10em;
@@ -222,6 +235,10 @@
     font-size: 1.2rem;
     font-weight: 700;
     
+}
+
+.button-addCoins:focus{
+    outline: none;
 }
 
 .one{
@@ -262,21 +279,13 @@
     display: none;
 }
 
-.close-PointsSuccess{
-    width: 2em;
-    height: 2em;
-    padding-bottom: 0.7em;
-    border: none;
-    background: none;
-    color: #fff;
-}
 
 .successAddPoints{
     padding-top: 0.2em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #0ad4fa;
+    background-color: #63e72f;
     border-radius: 8px;
 }
 
@@ -286,7 +295,53 @@
 }
 
 
-.success-pointsSuccess{
-    color: #fff;
+.success-p{
+    color: #2f2c3d;
     padding-left: 0.2em;
+}
+
+/* Card Container Styling */
+
+
+.sort-options{
+    margin: 1em 0 1em 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.sort-option-btn.active{
+    background: #0ad4fa;
+    color: #fff;
+    outline: none;
+}
+
+.sort-option-btn {
+    padding: .5rem 1rem;
+    margin: -0.1rem .5em;
+    background-color: #f0f0f0;
+    color: #919191ed;
+    border-radius: 1rem;
+    border: 0;
+}
+
+.sort-option-btn:focus{
+    outline: none;
+}
+
+.arrows{
+    margin-bottom: 2em;
+    float: right;
+}
+
+.arrow-btn{
+    border: none;
+    background: none;
+}
+
+.arrow-btn:focus{
+    outline: none;
+}
+
+.btn-p{
+    color: lightgrey;
 }

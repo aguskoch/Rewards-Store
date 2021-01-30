@@ -3,6 +3,7 @@ import coin from "../assets/coin.svg"
 import buy from "../assets/buy-blue.svg"
 import postRedeem from "../actions/postRedeem.js"
 import emojiSmile from "../assets/emoji-smile.svg"
+import emojiSad from "../assets/emoji-frown.svg"
 import { userContext } from "../context/userContext"
 
 
@@ -33,7 +34,7 @@ function Cards(props) {
             <div className="card-hovered"> 
                 <div className="buttons-card-hovered"> 
                     <img className="buy" src={buy} alt="buy"/>
-                    <h5 className="card-cost"> { props.cost <= points ? props.cost : "Te faltan " + (props.cost - points)} </h5> 
+                    <h5 className="card-cost"> { props.cost <= points ? props.cost : "Missing " + (props.cost - points)} </h5> 
                     <img className="coin" src={coin} alt="coin"/>  
                 </div>
             </div>: null }
@@ -41,16 +42,16 @@ function Cards(props) {
             <div className="product-modal"> 
                 <button className="close" id="closeSuccessRedeeem" onClick={() => setSuccessRedeem("")}> X </button>
                 <div className="product-modal-div">
-                    <img className="smileyFace" src={emojiSmile} alt="success" />
+                    <img className="emojis-modal" src={emojiSmile} alt="success" />
                     <h4 className="successRedeem"> {successRedeem} </h4>
                 </div>
             </div> 
             : typeof successRedeem === 'undefined'?
-            <div className="product-modal-failed"> 
+            <div className="product-modal-failed" id="modal-failed"> 
                 <button className="close" id="closeSuccessRedeeem" onClick={() => setSuccessRedeem("")}> X </button>
                 <div className="product-modal-div">
-                    <img className="smileyFace" src={emojiSmile} alt="success" />
-                    <h4 className="successRedeem"> {successRedeem} </h4>
+                    <img className="emojis-modal" src={emojiSad} alt="error" />
+                    <h4 className="successRedeem"> The transaction failed. Please try again later! </h4>
                 </div>
             </div>
             : null }

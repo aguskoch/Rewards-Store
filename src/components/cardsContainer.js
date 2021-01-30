@@ -3,11 +3,14 @@ import Cards from "./cards"
 import getProducts from "../actions/getProducts"
 import usePagination from "../customHook/usePagination"
 import { LIMIT } from "../actions/constants"
+import arrowLeft from "../assets/arrow-left.svg"
+import arrowRight from "../assets/arrow-right.svg"
 
 const CardsContainer = () => {
 
     const [products, setProducts] = React.useState([])
     const [sortData, setSortData] = React.useState("recent")
+    const [option, setOption] = React.useState("")
     
     React.useEffect(() => {
         getProducts().then(e => setProducts(e));
@@ -28,23 +31,26 @@ const CardsContainer = () => {
     const {currentArray, next, prev, currentPage, maxPage } = usePagination(renderSwitch(),LIMIT)
 
     return (
-        <div>
-            <button onClick={() => setSortData("recent")}> Most Recent </button>
-            <button onClick={() => setSortData("lowPrice")}> Price: Low to High </button>
-            <button onClick={() => setSortData("highPrice")}> Price: High to Low </button>
-            {/* <div className="container-cards">
-                {products.map((data, id) => {
-                    return <Cards key={id} {...data} />
-                })}
-            </div> */}
+        <div className="container">
+            <div className="sort-options"> 
+                <h5> Sort by: </h5>
+                <button className={option === "recent"? "sort-option-btn active" : "sort-option-btn"} onClick={() => {setSortData("recent"); setOption("recent")}}> Most Recent </button>
+                <button className={option === "low" ? "sort-option-btn active" : "sort-option-btn"} onClick={() => {setSortData("lowPrice"); setOption("low")}}> Price: Low to High </button>
+                <button className={option === "high" ? "sort-option-btn active" : "sort-option-btn"} onClick={() => {setSortData("highPrice"); setOption("high")}}> Price: High to Low </button>
+            </div>
             <div className="container-cards">
                 {currentArray}
-                <div>
-                    <button disabled={currentPage <= 1} onClick={() => prev()}> Prev </button>
-                    <button disabled={currentPage >= maxPage} onClick={() => next()}> Next </button>
-                </div>
-                
             </div>
+            <div className="arrows">
+                <h8 className="btn-p"> Page {currentPage} / {maxPage} </h8>
+                <button className="arrow-btn" disabled={currentPage <= 1} onClick={() => prev()}> 
+                    <img src={arrowLeft} alt="prev" />
+                </button>
+                <button className="arrow-btn" disabled={currentPage >= maxPage} onClick={() => next()}> 
+                    <img src={arrowRight} alt="next" /> 
+                </button>
+            </div>
+        
             
 
         </div>

@@ -2,7 +2,7 @@ import React from "react"
 import coin from "../assets/coin.svg"
 import postMoreCoins from "../actions/postMorePoints"
 import { THOUSAND, FIVETHOUSAND, SEVENTHOUSAND } from "../actions/constants"
-import { userContext } from '../context/userContext';
+import {userContext} from "../context/userContext"
 
 
 function AddCoins(props) {
@@ -20,14 +20,14 @@ function AddCoins(props) {
     
     return (
         <div className="modal-screen">
-            <section className="addCoins">
-                <div>
-                    {show && 
-                    <div className={ "successEnabled successAddPoints" }> 
-                        <h6 className="success-pointsSuccess"> Success </h6>
-                    </div>
-                    }
+            <div className="successAddPointsDiv">
+                {show && 
+                <div className={ "successEnabled successAddPoints" }> 
+                    <h6 className="success-p"> Points added successfully </h6>
                 </div>
+                }
+            </div>
+            <section className="addCoins">
                 <h4 className="title-addCoins"> Add more coins </h4>
                 <button className="button-addCoins one" onClick={() => handleClick(THOUSAND)}>
                     <img src={coin} alt={THOUSAND} />
