@@ -1,9 +1,8 @@
-import CardsContainer from "./components/cardsContainer";
-// import getProducts from "./actions/getProducts";
-// import Cards from "./components/cards"
-import Header from "./components/header"
-import { UserProvider } from './context/userContext'
+import Header from './components/header'
 import "./styles.css"
+import CardsContainer from './components/cardsContainer'
+import ProductsHistory from './components/productsHistory'
+import { UserProvider } from './context/userContext'
 
 function App() {
 
@@ -12,6 +11,7 @@ function App() {
       <UserProvider>
         <Header />
         <CardsContainer />
+        <ProductsHistory />
       </UserProvider>
     </div>
   );

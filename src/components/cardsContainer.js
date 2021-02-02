@@ -5,12 +5,16 @@ import usePagination from "../customHook/usePagination"
 import { LIMIT } from "../actions/constants"
 import arrowLeft from "../assets/arrow-left.svg"
 import arrowRight from "../assets/arrow-right.svg"
+import { userContext } from '../context/userContext';
+import ProductsHistory from "./productsHistory"
 
 const CardsContainer = () => {
 
     const [products, setProducts] = React.useState([])
     const [sortData, setSortData] = React.useState("recent")
     const [option, setOption] = React.useState("")
+    const { history } = React.useContext(userContext)
+
     
     React.useEffect(() => {
         getProducts().then(e => setProducts(e));
@@ -31,7 +35,7 @@ const CardsContainer = () => {
     const {currentArray, next, prev, currentPage, maxPage } = usePagination(renderSwitch(),LIMIT)
 
     return (
-        <div className="container">
+        <div style={{display: history ? "none" : "block"}} className="container">
             <div className="sort-options"> 
                 <h5> Sort by: </h5>
                 <button className={option === "recent"? "sort-option-btn active" : "sort-option-btn"} onClick={() => {setSortData("recent"); setOption("recent")}}> Most Recent </button>
@@ -40,6 +44,9 @@ const CardsContainer = () => {
             </div>
             <div className="container-cards">
                 {currentArray}
+            </div>
+            <div style={{display: history ? "block" : "none"}}>
+                <ProductsHistory />
             </div>
             <div className="arrows">
                 <h8 className="btn-p"> Page {currentPage} / {maxPage} </h8>
